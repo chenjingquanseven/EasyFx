@@ -18,6 +18,10 @@
 
         public static string ToCamcel(this string data)
         {
+            if (string.IsNullOrWhiteSpace(data))
+            {
+                return data;
+            }
             var first = data[0];
             return first.ToString().ToLower() + data.Substring(1, data.Length - 1);
         }
